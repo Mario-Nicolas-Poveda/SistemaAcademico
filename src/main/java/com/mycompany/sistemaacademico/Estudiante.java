@@ -8,6 +8,10 @@ package com.mycompany.sistemaacademico;
  *
  * @author Jose Rodriguez
  */
-public class SistemaAcademico {
-    
+public class Estudiante {
+    private String codigo;
+    private String nombre;
+    private String programa;
+    private int semestre;
+
 }
