@@ -33,6 +33,7 @@ public class SistemaAcademico {
             System.out.println("No encontrada.");
         }
         actualizarAsignatura();
+        eliminarAsignatura();
 
         
 }
@@ -86,5 +87,18 @@ public class SistemaAcademico {
         sc.nextLine();
 
         System.out.println("Asignatura actualizada.");
+    }
+    public static void eliminarAsignatura() {
+        System.out.print("Código de la asignatura a eliminar: ");
+        String codigo = sc.nextLine();
+
+        Asignatura a = buscarAsignatura(codigo);
+        if (a == null) {
+            System.out.println("Asignatura no encontrada.");
+            return;
+        }
+
+        listaAsignaturas.remove(a);
+        System.out.println("Asignatura eliminada.");
     }
 }
