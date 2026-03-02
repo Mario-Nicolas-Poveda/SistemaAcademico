@@ -1,3 +1,8 @@
+package com.mycompany.sistemaacademico;
+
+
+import com.mycompany.sistemaacademico.Asignatura;
+
 
 public class Nota 
 {
