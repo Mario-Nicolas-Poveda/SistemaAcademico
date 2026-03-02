@@ -32,6 +32,7 @@ public class SistemaAcademico {
         } else {
             System.out.println("No encontrada.");
         }
+        actualizarAsignatura();
 
         
 }
@@ -66,5 +67,24 @@ public class SistemaAcademico {
             }
         }
         return null;
+    }
+    public static void actualizarAsignatura() {
+        System.out.print("Código de la asignatura a actualizar: ");
+        String codigo = sc.nextLine();
+
+        Asignatura a = buscarAsignatura(codigo);
+        if (a == null) {
+            System.out.println("Asignatura no encontrada.");
+            return;
+        }
+
+        System.out.print("Nuevo nombre: ");
+        a.setNombre(sc.nextLine());
+
+        System.out.print("Nuevos créditos: ");
+        a.setCreditos(sc.nextInt());
+        sc.nextLine();
+
+        System.out.println("Asignatura actualizada.");
     }
 }
