@@ -21,6 +21,18 @@ public class SistemaAcademico {
      */
     public static void main(String[] args) {
          registrarAsignatura();
+         listarAsignaturas();
+
+        System.out.print("Código a buscar: ");
+        String codigo = sc.nextLine();
+        Asignatura encontrada = buscarAsignatura(codigo);
+
+        if (encontrada != null) {
+            System.out.println("Asignatura encontrada: " + encontrada);
+        } else {
+            System.out.println("No encontrada.");
+        }
+
         
 }
     public static void registrarAsignatura() {
@@ -36,5 +48,23 @@ public class SistemaAcademico {
 
         listaAsignaturas.add(new Asignatura(codigo, nombre, creditos));
         System.out.println("Asignatura registrada correctamente.");
+    }
+    public static void listarAsignaturas() {
+        if (listaAsignaturas.isEmpty()) {
+            System.out.println("No hay asignaturas registradas.");
+            return;
+        }
+        for (Asignatura a : listaAsignaturas) {
+            System.out.println(a);
+        }
+    }
+
+    public static Asignatura buscarAsignatura(String codigo) {
+        for (Asignatura a : listaAsignaturas) {
+            if (a.getCodigo().equalsIgnoreCase(codigo)) {
+                return a;
+            }
+        }
+        return null;
     }
 }
